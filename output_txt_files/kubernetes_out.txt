@@ -1,0 +1,15 @@
+(.devops) voclabs:~/environment/operationalize-machine-learning (main) $ ./run_kubernetes.sh
+pod/microserviceproject created
+NAME                  READY   STATUS    RESTARTS   AGE
+microserviceproject   0/1     Pending   0          1s
+error: unable to forward port because pod is not running. Current status=Pending
+(.devops) voclabs:~/environment/operationalize-machine-learning (main) $ kubectl get pods
+NAME                  READY   STATUS              RESTARTS   AGE
+microserviceproject   0/1     ContainerCreating   0          29s
+(.devops) voclabs:~/environment/operationalize-machine-learning (main) $ kubectl get pods
+NAME                  READY   STATUS    RESTARTS   AGE
+microserviceproject   1/1     Running   0          38s
+(.devops) voclabs:~/environment/operationalize-machine-learning (main) $ kubectl port-forward microserviceproject 8000:80
+Forwarding from 127.0.0.1:8000 -> 80
+Forwarding from [::1]:8000 -> 80
+Handling connection for 8000<paste log output from Kubernetes-mediated prediction, here>
