@@ -1,3 +1,4 @@
+#begin of config.yaml
 version: 2
 jobs:
   build:
